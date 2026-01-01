@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request,redirect,session
 from ayurvedic_data import ayurvedic_db  # Import the data from separate file
 '''from sqlalchemy import SQLAlchemy'''
-ADMIN_USERNAME = "admin"
-ADMIN_PASSWORD = "admin123"  # (use env vars in real apps!)
+ADMIN_USERNAME = "******"
+ADMIN_PASSWORD = "******"  # (use env vars in real apps!)
 import sqlite3 
 connection=sqlite3.connect("custemer_log.db",check_same_thread=False)
 cur=connection.cursor()
@@ -11,8 +11,8 @@ cur.execute("create table if not exists Admin(Full_Name varchar(50),Age int,Emai
 app = Flask(__name__)
 from flask_mail import Mail,Message
 app.config["MAIL_SERVER"]="smtp.gmail.com"
-app.config["MAIL_USERNAME"]="usmam510@gmail.com"
-app.config["MAIL_PASSWORD"]="ywoe hame khej yxuk"
+app.config["MAIL_USERNAME"]="*******"
+app.config["MAIL_PASSWORD"]="*******"
 app.config["MAIL_PORT"]=587
 app.config["MAIL_USE_TLS"]=True
 mail=Mail(app)
