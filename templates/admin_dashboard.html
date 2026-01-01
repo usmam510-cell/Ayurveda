@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/admin_dashboard.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Admin Dashboard</h1>
+        <a href="/admin_login" class="logout-btn">Logout</a>
+    </div>
+
+    <div class="container">
+        <h2>Registered Customers</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Username</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in cdata %}
+                <tr>
+                    <td>{{ user[0] }}</td>
+                    <td>{{ user[1] }}</td>
+                    <td>{{ user[2] }}</td>
+                    <td>{{ user[3] }}</td>
+                    <td>{{ user[4] }}</td>
+                    <td>
+                        <form method="POST" action="/delete">
+                            <input type="hidden" name="username" value="{{ user[4] }}">
+                            <button type="submit" class="delete-btn" onclick="return confirm('Delete this user?')">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

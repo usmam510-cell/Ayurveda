@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayurvedic Recommendation System</title>
+<style>
+    /* Body Styling */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f3e8;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        color: #333;
+    }
+
+    /* Fixed Header with Title and Nav */
+    header {
+        width: 100%;
+        background-color: #E8E2D6;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+    }
+
+    header h1 {
+        margin: 0;
+        color: #006400;
+        font-family: 'Playfair Display', serif;
+        font-size: 28px;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #6E8B3D;
+        font-weight: bold;
+        margin: 0 15px;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: #4CAF50;
+    }
+
+    /* Main Container */
+    .container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        width: 90%;
+        margin: 180px auto 50px; /* margin-top to accommodate fixed header */
+        text-align: center;
+    }
+
+    /* Header Image */
+    .header-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: 4px solid #a9d18e;
+    }
+
+    h2, h1 {
+        color: #006400;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    /* Input Field */
+    input[type="text"] {
+        padding: 12px;
+        margin: 10px 0;
+        width: 80%;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+
+    /* Button Styling */
+    .btn {
+        padding: 12px 25px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    .back-btn {
+        background-color: #6c757d;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .back-btn:hover {
+        background-color: #5a6268;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 600px) {
+        .container {
+            padding: 30px 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Ananda Ayurveda</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/admin_login">Admin Login</a>
+        <a href="/cust_log">User Login</a>
+    </nav>
+</header>
+
+<div class="container">
+    <img src="./static/download.jpeg" alt="Ayurveda Logo" class="header-image">
+
+    <h1>Ayurvedic Remedy Finder</h1>
+    <p>🌿 Ancient Wisdom for Modern Wellness 🌿</p>
+    <p>Enter a specific condition (e.g., Diabetes, Hypertension, Anxiety) to receive a traditional Ayurvedic recommendation:</p>
+
+    <form action="/recommend" method="post">
+        <input type="text" id="disease" name="disease" placeholder="Type condition here..." required>
+        <br>
+        <input type="submit" value="Get Remedy" class="btn">
+    </form>
+
+    <!-- Logout/Home Button -->
+    <button class="btn back-btn" onclick="window.location.href='/cust_log'">Logout</button>
+</div>
+
+</body>
+</html>

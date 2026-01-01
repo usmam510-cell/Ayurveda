@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Remedy for {{ disease }}</title>
+   <style>
+    body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     text-align: center;
+     margin: 0;
+     padding: 20px;
+     background-color: #f7f3e8; /* Light beige/off-white, consistent with index.html */
+     color: #333;
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+ h1 {
+   color: #006400; /* Dark Green */
+   margin-bottom: 30px;
+   border-bottom: 2px solid #a9d18e;
+   padding-bottom: 10px;
+   width: 100%;
+   max-width: 800px; /* Limit header width */
+}
+
+ /* Container for the main content (image + details) */
+ .remedy-container {
+    display: flex; /* Enable Flexbox */
+    flex-direction: row; /* Default: items side-by-side */
+    gap: 30px; /* Space between columns */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* Adjust max-width as needed */
+    width: 90%;
+    align-items: flex-start; /* Align items to the top */
+ }
+
+ /* Details Section (Left Side) */
+    .details-section {
+        flex: 2; /* Takes up 2 parts of the available space */
+        text-align: left;
+        padding-right: 20px; /* Add some padding to the right */
+}
+
+ .details-section h2 {
+     color: #4CAF50;
+      margin-top: 0; /* Remove default top margin */
+       margin-bottom: 15px;
+     }
+
+.details-section p {
+    line-height: 1.6;
+     margin-bottom: 10px;
+    }
+
+ /* Image Section (Right Side) */
+.image-section {
+     flex: 1; /* Takes up 1 part of the available space */
+      display: flex;
+      justify-content: center; /* Center image horizontally */
+       align-items: flex-start; /* Align image to the top */
+    }
+
+.remedy-image {
+     max-width: 100%; /* Image should fit within its container */
+      height: auto;
+      border-radius: 8px; /* Slightly rounded corners for the image */
+       border: 1px solid #ddd; /* Subtle border around the image */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+/* Go Back Link Styling */
+.back-link {
+     display: inline-block;
+     margin-top: 30px;
+     padding: 10px 20px;
+     background-color: #006400; /* Dark green for consistency */
+     color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+ .back-link:hover {
+     background-color: #004d00;
+    }
+
+ /* Responsive Design: Stack columns on smaller screens */
+@media (max-width: 768px) {
+    .remedy-container {
+         flex-direction: column; /* Stack items vertically */
+         align-items: center; /* Center items when stacked */
+        }
+        .details-section {
+             padding-right: 0; /* Remove right padding when stacked */
+             text-align: center; /* Center text when stacked */
+            }
+            .image-section {
+                 margin-top: 20px; /* Add space between text and image */
+                }
+ }
+</style>
+</head>
+<body>
+    <h1>Recommendation for: {{ disease }}</h1>
+
+    {% if rec %}
+        <div class="remedy-container">
+        <div class="details-section">
+            <h2>Recommended Formulation: <strong>{{ rec.formulation or 'N/A' }}</strong></h2>
+ 
+                <!-- ADDED NEW SYMPTOMS BRIEF FIELD HERE -->
+                {% if rec.symptoms_brief %}
+                <p><strong>Condition Overview:</strong> {{ rec.symptoms_brief }}</p>
+                {% endif %}
+                
+                <p><strong>Primary Herbs:</strong> {{ rec.herbs | join(', ') }}</p>
+                <p><strong>Usage Method:</strong> {{ rec.usage or 'Consult a practitioner for exact dosage.' }}</p>
+            </div>
+
+            <div class="image-section">
+                {% if rec.image %}
+                    <img src="{{ url_for('static', filename=rec.image) }}" 
+                     alt="Image of {{ rec.formulation }}" 
+                         class="remedy-image">
+                {% else %}
+                <p>No specific image found for this remedy.</p>
+                {% endif %}
+            </div>
+        </div>  
+    {% else %}
+        <p>Sorry, no recommendation found for "<strong>{{ disease }}</strong>" in the database.</p>
+    {% endif %}
+ 
+   <a href="/index" class="back-link">Go Back to Search</a>
+</body>
+</html>

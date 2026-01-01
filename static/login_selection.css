@@ -1,0 +1,83 @@
+/* General page setup */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #2980b9, #6dd5fa);
+}
+
+/* Container styling */
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Logo */
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* Heading */
+h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+/* Button container */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+/* Admin button */
+.btn.admin {
+    background-color: #e74c3c;
+}
+
+.btn.admin:hover {
+    background-color: #c0392b;
+}
+
+/* User button */
+.btn.user {
+    background-color: #2980b9;
+}
+
+.btn.user:hover {
+    background-color: #21618c;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .container {
+        width: 85%;
+        padding: 30px 20px;
+    }
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
+}

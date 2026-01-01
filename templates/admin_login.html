@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ananda Ayurveda - Login</title>
+<style>
+    body { font-family: 'Lato', sans-serif; background-color: #F5F1E7; margin:0; padding:0; }
+    header, nav, footer { background-color: #E8E2D6; padding: 15px 50px; }
+    nav a { margin: 0 15px; font-weight:bold; text-decoration:none; color:#6E8B3D; }
+    .container { width:90%; max-width:400px; margin:50px auto; padding:20px; background:#fff; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1);}
+    h2 { font-family:'Playfair Display', serif; color:#6E8B3D; }
+    input { width:100%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ccc; }
+    button { width:100%; padding:10px; background-color:#DFAF2C; border:none; font-weight:bold; cursor:pointer; border-radius:5px; }
+    .link { text-align:center; margin-top:10px; }
+    .link a { color:#6E8B3D; text-decoration:none; }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Ananda Ayurveda</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/cust_log">User Login</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>User/Admin Login</h2>
+    <!-- Login form now points to server endpoint -->
+    <form id="loginForm" method="post" action="/admin_login">
+        <input type="text" placeholder="Username" id="username" name="Username" required>
+        <input type="password" placeholder="Password" id="password" name="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="link">
+        <!-- Registration handled via redirect -->
+        <a href="/register">Register New User</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Ananda Ayurveda. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

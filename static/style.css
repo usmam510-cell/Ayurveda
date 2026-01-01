@@ -1,0 +1,79 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Full page background */
+body {
+  height: 100vh;
+  background: linear-gradient(to bottom right, #b6e4a8, #4caf50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Login box */
+.login-box {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 320px;
+}
+
+/* Heading */
+.login-box h2 {
+  margin-bottom: 1.5rem;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+/* Inputs */
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Button */
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.login-box button:hover {
+  background-color: #388e3c;
+}
+
+/* Demo text */
+.demo {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.leaf {
+  font-size: 1.2em;
+}

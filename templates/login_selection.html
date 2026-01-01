@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ananda Ayurveda Portal</title>
+<style>
+    body {
+        font-family: 'Lato', sans-serif;
+        background-color: #F5F1E7;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Fixed Header */
+    header {
+        background-color: #E8E2D6;
+        padding: 15px 50px;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+        color: #6E8B3D;
+        font-family: 'Playfair Display', serif;
+        margin: 0;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 0 15px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #6E8B3D;
+    }
+
+    /* Hero Image Scroll */
+    .hero {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 120px; /* Add space to compensate for fixed header */
+        background: #F5F1E7;
+    }
+
+    .image-row {
+        display: flex;
+        gap: 20px;
+        position: relative;
+        animation: moveLeft 30s linear infinite;
+    }
+
+    .image-row img {
+        width: 180px;
+        height: 180px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    @keyframes moveLeft {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        color: #6E8B3D;
+        font-family: 'Playfair Display', serif;
+    }
+
+    p, li {
+        line-height: 1.6;
+    }
+
+    ul {
+        margin-left: 20px;
+    }
+
+    .buttons {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        text-decoration: none;
+        margin-right: 20px;
+        font-weight: bold;
+        border-radius: 5px;
+        color: white;
+        display: inline-block;
+    }
+
+    .admin { background-color: #DFAF2C; }
+    .user { background-color: #6E8B3D; }
+
+    footer {
+        background-color: #E8E2D6;
+        padding: 15px 50px;
+        text-align: center;
+        margin-top: 40px;
+    }
+</style>
+</head>
+<body>
+
+<!-- Fixed Header -->
+<header>
+    <h1>Ananda Ayurveda</h1>
+    <nav>
+        <a href="/admin_login">Admin Login</a>
+        <a href="/cust_log">User Login</a>
+        <a href="index.html">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero Section with Scrolling Images -->
+<div class="hero">
+    <div class="image-row">
+        <img src="/static/ashwagandha.jpeg" alt="Ashwagandha">
+        <img src="/static/Turmeric.jpeg" alt="Turmeric">
+        <img src="/static/Amla.jpeg" alt="Amla">
+        <img src="/static/Brahmi.jpeg" alt="Brahmi">
+        <img src="/static/Cinnamon.jpeg" alt="Cinnamon">
+        <img src="/static/Giloy.jpeg" alt="Giloy">
+        <img src="/static/Aloeveragel.jpeg" alt="Aloe Vera">
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+    <h2>Ayurvedic Ingredients</h2>
+    <p>Ayurvedic ingredients are a wide range of plant-based, mineral, and animal products, with plant-based substances making up the majority, including herbs, roots, leaves, fruits, and seeds...</p>
+
+    <h3>Common Ayurvedic Ingredients:</h3>
+    <ul>
+        <li><b>Ashwagandha:</b> Helps manage stress, boosts immunity, improves sleep.</li>
+        <li><b>Turmeric:</b> Anti-inflammatory, antioxidant, supports liver function.</li>
+        <li><b>Amla (Indian Gooseberry):</b> Rich in Vitamin C, cooling properties.</li>
+        <li><b>Brahmi:</b> Enhances memory and cognitive function.</li>
+        <li><b>Cinnamon:</b> Anti-inflammatory, antimicrobial.</li>
+        <li><b>Giloy (Guduchi):</b> Boosts immunity, supports digestion.</li>
+        <li><b>Licorice Root (Mulethi):</b> Cooling, anti-inflammatory, helps infections.</li>
+        <li><b>Shatavari:</b> Rejuvenating herb for women's health.</li>
+        <li><b>Honey:</b> Nutritional and medicinal properties.</li>
+        <li><b>Coriander (Dhanyaka):</b> Cooling effect, aids digestion.</li>
+        <li><b>Aloe Vera:</b> Healing gel, supports skin and digestive health.</li>
+    </ul>
+
+    <h3>Important Considerations:</h3>
+    <ul>
+        <li><b>Regulation:</b> Ayurvedic products are regulated as dietary supplements in the U.S.</li>
+        <li><b>Safety:</b> Some may contain heavy metals like lead, arsenic, or mercury.</li>
+        <li><b>Interactions:</b> Can interact with conventional medicines or supplements.</li>
+        <li><b>Consult a Professional:</b> Always consult a healthcare provider before using Ayurvedic treatments.</li>
+    </ul>
+
+    <!-- Login Buttons -->
+    <div class="buttons">
+        <a href="/admin_login" class="btn admin">Admin Login</a>
+        <a href="/cust_log" class="btn user">User Login</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Ananda Ayurveda. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
