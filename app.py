@@ -34,7 +34,7 @@ def login():
         # print(username,password,umail)
         if ( uname in patience )and (upassword in patience):
             try:
-                '''data=Message(subject="Your Login Sucess Fully",sender="usmam510@gmail.com",recipients=[patience[2],])
+                '''data=Message(subject="Your Login Sucess Fully",sender="*******@gmail.com",recipients=[patience[2],])
                 data.body="Welcome to the portel"
                 mail.send(data)'''
                 return redirect("/index")
@@ -53,7 +53,7 @@ def register():
         cpass=request.form["Confirm Password"]
         cur.execute("insert into Custmer(Full_Name,Age,Email,Phone_number,Username,Password,Confirm_Password)values(?,?,?,?,?,?,?)",(Fname,age,email,pnumber,uname,passw,cpass,))
         connection.commit()
-        data=Message(subject="Your REGISTER Sucess Fully",sender="usmam510@gmail.com",recipients=[email,])
+        data=Message(subject="Your REGISTER Sucess Fully",sender="******@gmail.com",recipients=[email,])
         data.body="Welcome to the portel"
         mail.send(data)
         return redirect("/cust_log")
@@ -86,7 +86,7 @@ def log():
         # print(username,password,umail)
         if ( adname in patience )and (adpassword in patience):
             try:
-                '''data=Message(subject="Your Login Sucess Fully",sender="usmam510@gmail.com",recipients=[patience[2],])
+                '''data=Message(subject="Your Login Sucess Fully",sender="******@gmail.com",recipients=[patience[2],])
                 data.body="Welcome to the portel"
                 mail.send(data)'''
                 return redirect("/admin_dashboard")
@@ -105,7 +105,7 @@ def reg():
         cpass=request.form["Confirm Password"]
         cur.execute("insert into Admin(Full_Name,Age,Email,Phone_number,Username,Password,Confirm_Password)values(?,?,?,?,?,?,?)",(Fname,age,email,pnumber,uname,passw,cpass,))
         connection.commit()
-        data=Message(subject="Your REGISTER Sucess Fully",sender="usmam510@gmail.com",recipients=[email,])
+        data=Message(subject="Your REGISTER Sucess Fully",sender="******@gmail.com",recipients=[email,])
         data.body="Welcome to the portel"
         mail.send(data)
         return redirect("/admin_login")
